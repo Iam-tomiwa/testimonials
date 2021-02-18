@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: var(--white-bg);
+  color: var(--text-color);
+  font-family: "Poppins";
+  overflow-x: hidden;
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+}
+button:focus {
+  outline: none;
+}
+section.testimonials {
+  background: #ebe5ff;
+  padding: 2rem 1rem;
+  text-align: center;
+
+  .heading-big {
+    position: relative;
+    display: inline-block;
+    margin: 1rem auto 2rem auto;
+    font-size: 1.5rem;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      border: 3px solid #f30507;
+      z-index: 10;
+    }
+  }
+  .container-fluid {
+    width: 90vw;
+    margin: auto;
+  }
+  .owl-dot span {
+    background: white !important;
+  }
+  .owl-dot.active span {
+    background: #f30507 !important;
+  }
+}
+.owl-carousel {
+  position: relative;
+
+  .owl-stage-outer {
+    padding: 3rem 0 1rem 0;
+  }
+
+  .owl-item {
+    transition: transform 0.3s ease;
+    transform: scale(0.8);
+  }
+
+  @media (min-width: 900px) {
+    .owl-item.active.center {
+      transform: scale(1);
+      z-index: 100;
+    }
+
+    .heading-big {
+      font-size: 2.7rem;
+    }
+    .container-fluid {
+      width: 80vw;
+    }
+    section.testimonials {
+      padding: 2rem 3rem;
+    }
+  }
+}
+
+.slider-item {
+  position: relative;
+  box-shadow: 6px 7px 10px 5px rgba(201, 201, 201, 0.15),
+    -6px -7px 10px 5px rgba(201, 201, 201, 0.15);
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: white;
+  margin: 0 -2rem;
+  text-align: center;
+
+  .slider-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    z-index: 100;
+    margin: auto;
+    margin-top: -65px;
+  }
+
+  h2 {
+    margin: 0.5rem auto 1rem auto;
+  }
+
+  h4 {
+    color: #f30507;
+  }
+
+  .text {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+.owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  outline: none;
+  border: 50%;
+
+  div {
+    font-size: 1.7rem;
+    border-radius: 50% !important;
+    color: white !important;
+    background: #f30507 !important;
+    transition: 0.5s;
+    padding: 0.2rem 0.8rem;
+
+    &:hover {
+      background: white !important;
+      color: #f30507 !important;
+    }
+  }
+  &:hover {
+    background: none !important;
+  }
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+  &.owl-prev {
+    left: -3rem;
+  }
+  &.owl-next {
+    right: -3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .owl-nav {
+    display: none;
+  }
+}
